@@ -6,12 +6,15 @@
         .brand{
             background: #cdd09c !important;
         }
+        .brand-text{
+            color: #cdd09c !important;
+        }
     </style>
 </head>
 <body class="grey lighten-4">
     <nav class="white z-depth-0">
         <div class="container">
-            <a href="#" class="brand-logo brand-text">Pizza Project</a>
+            <a href="#" class="brand-logo center brand-text">Pizza Project</a>
             <ul id="nav-mobile" class="right hide-on-small-and-down">
                 <li><a href="#" class="btn brand z-depth-0">Add Pizza</a></li>
             </ul>
