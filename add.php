@@ -12,6 +12,9 @@
                 <input type="text" name="title">
                 <label for="">Ingredient(comma separated):</label>
                 <input type="text" name="ingredients">
+                <div class="center">
+                    <input type="submit" name="submit" value = "submit" class="btn brand z-depth-0">
+                </div>
            
             </form>
         </section>
