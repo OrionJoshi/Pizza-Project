@@ -1,11 +1,6 @@
 <?php
-    //Connect to database
-    $conn = mysqli_connect('localhost','root','','pizza_project');
-
-    //Check Connection
-    if(!$conn){
-        echo "Connection error:" . mysqli_connect_error();
-    }
+    
+    include('templates/config/db_connect.php');
 
     //Write query for all prizzas
     $sql = 'SELECT title, ingredients, id FROM pizzas ORDER BY created_at';
