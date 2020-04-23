@@ -1,3 +1,17 @@
+<?php
+    if(isset($_POST['submit'])){
+        //check email
+        if(empty($_POST['email'])){
+            echo 'An email is required <br />';
+        }else{
+            $email = $_POST['email'];
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                echo "Email must be a valid email address";
+            }
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +19,7 @@
 
         <section class="container grey-text">
             <h4 class="center">Add a Pizza</h4>
-            <form action="" class="white" method="GET">
+            <form action="" class="white" method="POST">
                 <label for="">Your Email:</label>
                 <input type="email" name="email">
                 <label for="">Pizza Title:</label>
