@@ -12,12 +12,19 @@
 
         //check title
         if(empty($_POST['title'])){
-            echo 'An email is required <br />';
+            echo 'An title is required <br />';
         }else{
             $title = $_POST['title'];
             if(!preg_match('/^[a-zA-Z]+$/', $title)){
                 echo "Title must be letters and spaces only";
             }
+        }
+
+        //Check for ingredient
+        if(empty($_POST['ingredients'])){
+            echo 'An ingredients are required <br />';
+        }else{
+
         }
     }
 
