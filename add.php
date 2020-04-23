@@ -14,6 +14,7 @@
         if(empty($_POST['title'])){
             echo 'An title is required <br />';
         }else{
+
             $title = $_POST['title'];
             if(!preg_match('/^[a-zA-Z]+$/', $title)){
                 echo "Title must be letters and spaces only";
@@ -22,9 +23,15 @@
 
         //Check for ingredient
         if(empty($_POST['ingredients'])){
+
             echo 'An ingredients are required <br />';
+
         }else{
 
+            $ingredients = $_POST['ingredients'];
+            if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){
+                echo "Ingredients must be a comma seperated list";
+            }
         }
     }
 
