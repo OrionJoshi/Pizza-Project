@@ -10,7 +10,17 @@
     //Write query for all prizzas
     $sql = 'SELECT title, ingredients, id FROM pizzas';
 
+    //make query and get result
+    $result = mysqli_query($conn,$sql);
 
+    //Fetch the rsulting rows as an array
+    $pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    //Release the memory 
+    mysqli_free_result($result);
+
+    //Close the connection
+    mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
