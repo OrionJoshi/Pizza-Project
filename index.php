@@ -1,3 +1,9 @@
+<?php
+    //Connect to database
+    $conn = mysqli_connect('localhost','root','','pizza_project');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
