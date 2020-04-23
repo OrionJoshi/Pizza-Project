@@ -1,4 +1,5 @@
 <?php
+    $title = $email = $ingredients = '';
     $errors = array('email'=> '', 'title' => '', 'ingredients' => '');
     if(isset($_POST['submit'])){
         //check email
@@ -46,17 +47,17 @@
             <h4 class="center">Add a Pizza</h4>
             <form action="" class="white" method="POST">
                 <label for="">Your Email:</label>
-                <input type="email" name="email">
+                <input type="email" name="email" value = "<?php echo $email; ?>">
 
                 <div class="red-text"><?php echo $errors['email']; ?></div>
 
                 <label for="">Pizza Title:</label>
-                <input type="text" name="title">
+                <input type="text" name="title" value = "<?php echo $title; ?>">
 
                 <div class="red-text"><?php echo $errors['title']; ?></div>
 
                 <label for="">Ingredient(comma separated):</label>
-                <input type="text" name="ingredients">
+                <input type="text" name="ingredients" value = "<?php echo $ingredients; ?>">
 
                 <div class="red-text"><?php echo $errors['ingredients']; ?></div>
 
