@@ -6,6 +6,11 @@
     if(!$conn){
         echo "Connection error:" . mysqli_connect_error();
     }
+
+    //Write query for all prizzas
+    $sql = 'SELECT title, ingredients, id FROM pizzas';
+
+
 ?>
 
 <!DOCTYPE html>
