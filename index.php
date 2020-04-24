@@ -1,11 +1,6 @@
 <?php
-    //Connect to database
-    $conn = mysqli_connect('localhost','root','','pizza_project');
-
-    //Check Connection
-    if(!$conn){
-        echo "Connection error:" . mysqli_connect_error();
-    }
+    
+    include('templates/config/db_connect.php');
 
     //Write query for all prizzas
     $sql = 'SELECT title, ingredients, id FROM pizzas ORDER BY created_at';
@@ -21,6 +16,7 @@
 
     //Close the connection
     mysqli_close($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -31,16 +27,29 @@
     <h4 class="center grey-text">Pizzas!</h4>
     <div class="container">
         <div class="row">
-            <?php foreach($pizzas as $pizza){?>
+            <?php foreach($pizzas as $pizza):?>
                 <div class="col s6 md3">
                     <div class="card z-depth-0">
+                        <img src="img/images.jpg" class="pizza" alt="pizza image">
                         <div class="card-content center">
-                            <h6><?php echo htmlspecialchars($pizzas['title']);?></h6>
-                            <div><?php echo htmlspecialchars($pizza['ingredients']);?></div>
+                            <h5><?php echo htmlspecialchars($pizza['title']);?></h5>
+                            <ul>
+                                <?php foreach(explode(',', $pizza['ingredients']) as $ing): ?>
+                                    <li><?php echo htmlspecialchars($ing); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                        <div class="card-action right-align">
+                            <a href="details.php?id=<?php echo $pizza['id']; ?>" class="brand-text">More info</a>
                         </div>
                     </div>
                 </div>
-            <?php }?>
+            <?php endforeach; ?>
+            <!-- <?php if(count($pizzas)>= 3):?>
+                <p>There are 3 or more Pizzas</p>
+            <?php else: ?>
+                <p>There are less than 3 Pizzas</p>
+            <?php endif; ?> -->
         </div>
     </div>
 
