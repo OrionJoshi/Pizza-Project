@@ -1,6 +1,22 @@
 <?php
     include('templates/config/db_connect.php');
     
+    if(isset($_POST['delete'])){
+
+        $id_to_delete = mysqli_real_escape_string($conn, $_POST['id_to_delete']);
+
+        $sql = "DELETE * FROM pizzas WHERE id = '$id_to_delete'";
+
+        if(mysqli_query($sql)){
+
+            header('Location: index.php');
+
+        }else{
+
+            echo "Query error: " . mysqli_error($conn);
+        }
+
+    }
     //Check GET request id parameter
     if(isset($_GET['id'])){
 
