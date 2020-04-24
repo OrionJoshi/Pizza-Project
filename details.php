@@ -14,7 +14,10 @@
 
         //Fetching result in the array format
         $pizza = mysqli_fetch_assoc($result);
-        
+
+        //Free a variable
+        mysqli_free_result($result);
+        mysqli_close($conn);
     }
 
 ?>
