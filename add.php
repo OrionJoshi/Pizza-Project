@@ -41,8 +41,22 @@
         if(array_filter($errors)){
            // echo 'Errors in the form';
         }else{
-           // echo 'Form is Valid';
-           header('Location: index.php');
+
+            $email = mysqli_real_escape_string($conn, $_POST['email']);
+            $title = mysqli_real_escape_string($conn, $_POST['title']);
+            $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+
+            //Create Query
+            $sql = "INSERT INTO pizzas(title, email, ingredients) VALUES ('$title','$email','$ingredients')";
+
+            //Save to Db and Check
+            if(mysqli_query($conn,$sql)){
+                header('Location: index.php');
+            }else{
+                //error
+                echo 'Query error: ' . mysqli_error($conn);
+            }
+
         }
     }
 
