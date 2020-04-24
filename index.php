@@ -45,11 +45,11 @@
                     </div>
                 </div>
             <?php endforeach; ?>
-            <?php if(count($pizzas)>= 3):?>
+            <!-- <?php if(count($pizzas)>= 3):?>
                 <p>There are 3 or more Pizzas</p>
             <?php else: ?>
                 <p>There are less than 3 Pizzas</p>
-            <?php endif; ?>
+            <?php endif; ?> -->
         </div>
     </div>
 
